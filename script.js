@@ -19,11 +19,3 @@ localstorage();
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    initSidebar();
-    unitinput();
-    comingexams();
-    notefunc();
-    weatherfunc();
-    localstorage();
-});
