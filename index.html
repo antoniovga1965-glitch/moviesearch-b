@@ -7,6 +7,208 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   < style>
+    *{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+.smartkidsproduction{
+    width: 100%;
+    padding: 10px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: cadetblue;
+    padding: 10px;
+    
+}
+.logo{
+    font-size: 1.3rem;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.lastbutton{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#login,button{
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.hamburgermenu{
+    width: 30px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+}
+span{
+    height: 5px;
+    background-color: black;
+    display: block;
+    width:100%;
+}
+.sidebar{
+    width: 20%;
+    background-color: navy;
+    height: 500px;
+    left:3px;
+    padding: 10px;
+    position: fixed;
+     transform: translateX(-130%);
+     transition: transform 0.3s ease;
+}
+.sidebar.active{
+    transform: translateX(0);
+
+}
+ul{
+    list-style: none;
+}
+li{
+    margin: 10px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.cards{
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.card{
+    min-height: 200px;
+    height:auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h2{
+    text-align: center;
+    padding: 10px;
+}
+@media (max-width:600px){
+    nav{
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+  .logo{
+    font-size: clamp(0.76rem,1.2rem,1.4rem);
+  }
+  #login,button{
+    gap: 5px;
+    padding: 5px;
+  }
+  .hamburgermenu{
+    width:5%;
+  }
+  .cards{
+    margin-left: 5px;
+  }
+  .sidebar{
+    width: 80%;
+    left: 4px;
+  }
+  h2{
+    font-size: clamp(0.95rem,1.1rem,1.3rem);
+    padding: 10px;
+  }
+  tr,th{
+    padding: 5px 8px;
+  }
+  
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+tr,th{
+    padding: 10px 5px;
+}
+label{
+    display: block;
+    font-size: 1.3rem;
+}
+input{
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+#unitresults,#upcomingexamsresults{
+    width: 100%;
+    height: fit-content;
+    display: none;
+    border-radius: 10px;
+    margin-top:10px ;
+    background-color: rgb(181, 178, 171);
+    padding: 10px;
+    font-size: 1.2rem;
+}
+.card1{
+    padding: 10px;
+    border: 1px solid black;
+}
+textarea{
+    border: 1px solid green;
+    width: 98%;
+    padding: 10px;
+    font-size: clamp(0.95rem,1.1rem,1.3rem);
+    height: auto;
+    border-radius: 10px;
+    min-height :200px;
+}
+.motivation{
+    padding: 10px;
+}
+#noteresults{
+margin-top: 10px;
+display: none;
+padding: 10px;
+border: 1px solid blue;
+height: fit-content;
+font-size:1.2rem ;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.spinner{
+  width: 80px;
+  display: none;
+  height: 80px;
+  border: 8px solid green;
+  border-top: 8px solid yellow;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+       </stye>
  <div class="smartkidsproduction">
     <nav>
         <div id="hamburgermenu" class="hamburgermenu">
