@@ -1,64 +1,29 @@
-const darkmodetoggle = document.getElementById("darkmodetoggle");
-const body = document.getElementById("results")
-darkmodetoggle.addEventListener("click",()=>{
-body.classList.toggle("darkmode");
-})
+import {  sidebar} from "./sidebar.js";
+sidebar();
 
-const searchinput = document.getElementById("searchInput");
-const searchbutton = document.getElementById("searchbtn");
-const results = document.getElementById("results");
+import { unitinput } from "./adddeletenote.js";
+unitinput();
 
-savedmovies= JSON.parse(localStorage.getItem("searched"))||[];
 
-async function searchmovie() {
+import { comingexams } from "./upcomingexams.js";
+comingexams();
 
-    const moviesearch = searchinput.value.trim();
-     if(!moviesearch){
-        results.innerHTML = "please seach a movie";
-        return;
-     }
+import { notefunc } from "./note.js";
+notefunc();
 
-    try{
-        const Url = `https://www.omdbapi.com/?s=${moviesearch}&apikey=35e6dea8`;
-        const response  = await fetch(Url);
-        if(!response.ok){throw new Error("network issue")};
-        const data = await response.json();
-        const found = data.Search;
-         savedmovies.push(moviesearch);
+import { weatherfunc } from "./weather.js";
+weatherfunc();
 
-         localStorage.setItem("searched",JSON.stringify(savedmovies));
+import { localstorage } from "./storage.js";
+localstorage();
 
-        console.log(found);
 
-        results.innerHTML = "";
 
-        found.forEach(movie=> {
-            const movieEl = document.createElement("div");
-            movieEl.style.width="200";
-            movieEl.style.textAlign = "center";
-            movieEl.style.display ="inline-block";
-            movieEl.style.margin="10px";
-            
-            movieEl.classList.add("movie-card")
-
-            movieEl.innerHTML = `
-            <img src="${movie.Poster}" alt="${movie.Title}" width="200px">
-            <h2>${movie.Title}</h2> 
-            <p>${movie.Year}</p>`
-             results.appendChild(movieEl);
-            ;
-
-           
-            
-        });
-
-        searchinput.value ="";
-        
-
-    }
-    catch(error){
-results.innerHTML = "failed to fetch";
-    }
-    
-}
-searchbutton.addEventListener("click",searchmovie);
+document.addEventListener("DOMContentLoaded", () => {
+    initSidebar();
+    unitinput();
+    comingexams();
+    notefunc();
+    weatherfunc();
+    localstorage();
+});
