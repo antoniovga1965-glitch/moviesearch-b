@@ -3,110 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie search</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-image: url("photo-1763641683842-3b4f09950d67.avif");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 1.7rem;
-            background-color: green;
-            color: white;
-            padding: 10px 0;
-        }
-
-        nav {
-            background-color: white;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bolder;
-        }
-
-        #searchInput {
-            flex: 1;
-            min-width: 150px;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid #ccc;
-        }
-
-        #searchbtn, 
-        #darkmodetoggle {
-            border: none;
-            background: none;
-        }
-
-        #searchbtn img,
-        #darkmodetoggle img {
-            width: 40px;
-        }
-
-        /* FIXED GRID */
-        #results {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            padding: 20px;
-        }
-
-        .movie-card {
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(6px);
-            border-radius: 10px;
-            text-align: center;
-            padding: 10px;
-        }
-
-        .movie-card img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .darkmode {
-            background-color: black;
-            color: white;
-        }
-    </style>
+    <title>Smartkids dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="container">
-        <h1>Movie search app</h1>
+ <div class="smartkidsproduction">
+    <nav>
+        <div id="hamburgermenu" class="hamburgermenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="logo">Smartkid's dashboard</div>
+    <div class="lastbutton">
+        <button id="login">Login</button>
+        <button>Sign up</button>
+    </div>
+    </nav>
+ </div>
 
-        <nav>
-            <div class="logo">Smarkid's App</div>
+ <div class="sidebar">
+    <ul>
+        <li><a href="#">Home</a></li>
+         <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+           <li><a href="#">Product</a></li>
+            <li><a href="#">Order a product</a></li>
+             <li><a href="#">Sell a product</a></li>
+             <li><a href="#">about us</a></li>
+                <li><a href="#">contacts</a></li>
+    </ul>
+ </div>
+ <div class="cards">
+    <div class="card">
+        <h2>Time table</h2>
 
-            <input type="search" id="searchInput" placeholder="Search a movie">
+        <table border="1">
+            <tr>
+                <th>Course</th>
+                <th>time</th>
+                <th>Lecturer</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td>Sch 111</td>
+                    <td>12:00am</td>
+                    <td>Dr.chacha</td>
 
-            <button id="searchbtn"><img src="download.png" alt="search"></button>
 
-            <button id="darkmodetoggle"><img src="download.jpeg" alt="Theme"></button>
-        </nav>
+                </tr>
+                     <tr>
+                    <td>Sch 121</td>
+                    <td>2:00am</td>
+                    <td>Dr.Halima</td>
+                       </tr>
 
-        <div id="results"></div>
+                   <tr>
+                    <td>Sbl 214</td>
+                    <td>8:00am</td>
+                    <td>Dr.zuena</td>
+                       </tr>
+
+            </tbody>
+        </table>
     </div>
 
-    <script src="script.js"></script>
+    <div class="card">
+        <H2>units</H2>
+        <input type="text" name="unit" id="unitinput" placeholder="please chacha enter your units">
+        <div class="div">
+
+      <button id="addunit">Add unit</button>
+        <button id="deleteunit">Delete unit</button>
+        </div>
+       <ul id="unitresults"></ul>
+    </div>
+
+
+    <div class="card">
+        <H2>Up-coming examination</H2>
+
+        <button id="checkupcomingbtn">Click to check </button>
+        <ul id="upcomingexamsresults"></ul>
+    </div>
+    <div class="card">
+        <h2>Coding languages to finish</h2>
+        <ol>
+            <li>Html</li>
+             <li>Css</li>
+              <li>Javascript</li>
+
+               <li>Python</li>
+                <li>django</li>
+                 <li>postgre</li>
+                  <li>Rest Api</li>
+        </ol>
+    </div>
+ </div>
+
+ <section>
+    <div class="noteApp">
+        <h2>Hello,Chacha would you like to take notes?</h2>
+        <div class="card1">
+            <textarea name="text" id="textinput" placeholder="WRITE YOUR NOTES HERE"></textarea>
+            <button id="addtext">Add note</button>
+        <button id="Deletetext">Delete note</button>
+        <div id="noteresults"></div>
+
+        </div>
+        
+    </div>
+ </section>
+
+
+ <section>
+    <div class="motivation">
+        <h2>You wanna know the weather of you county or country or city?</h2>
+
+        <label for="cityinput">Enter your county/country/city</label><br>
+        <input type="text" id="weatherinput" placeholder="Enter your current location">
+        <button id="getbtn">Get Weather</button>
+        <div class="cards">
+            <div  class="card">
+                <h2>LOCATION</h2>
+
+                 <div  id="locationspin" class="spinner"></div>
+
+
+                <div  id="locationresults"></div>
+            </div>
+            <div class="card">
+                 <h2>TEMPRATURES</h2>
+
+                  <div id="tempraturespinner" class="spinner"></div>
+
+                 <div id="tempratureresults"></div>
+            </div>
+            <div class="card">
+                 <h2>WIND SPEED</h2>
+                  <div id="windspeedspinner" class="spinner"></div>
+                 
+                 <div id="windspeed"></div>
+            </div>
+
+            <div class="card">
+                 <h2>WEATHER DESCRIPTION</h2>
+
+                  <div id="weatherspinner"  class="spinner"></div>
+
+                 <div id="weathedescription"></div>
+            </div>
+        </div>
+    </div>
+ </section>
+<footer>
+   <h2> @copyright of smartkids production</h2>
+  
+</footer>
+  </div>
+<script type="module" src="script.js"></script>
 </body>
 </html>
