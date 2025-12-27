@@ -25,7 +25,6 @@ export function notefunc() {
 
     function deletenotefunc() {
         if(noteresults.lastElementChild){
-             deletefromlocalstorage(weathervalue,unitvalue,textvalue)
             noteresults.lastElementChild.remove();
         }
     }
