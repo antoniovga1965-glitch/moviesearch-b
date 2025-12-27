@@ -32,8 +32,9 @@ export function notefunc() {
         noteresults.style.display = "none";
     }
 }
+        Deletetextbtn.addEventListener("click",deletenotefunc);
+
 
     }
-    Deletetextbtn.addEventListener("click",deletenotefunc);
 
-}
+
