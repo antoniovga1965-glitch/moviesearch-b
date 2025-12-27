@@ -26,7 +26,6 @@ export function unitinput() {
 
     function deleteunitfunc() {
         if(unitresults.lastElementChild){
-
             unitresults.lastElementChild.remove();
         }
     }
