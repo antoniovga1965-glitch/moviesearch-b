@@ -24,9 +24,15 @@ export function notefunc() {
 
 
     function deletenotefunc() {
-        if(noteresults.lastElementChild){
-            noteresults.lastElementChild.remove();
-        }
+    if (!noteresults.lastElementChild) return;
+
+    noteresults.lastElementChild.remove();
+
+    if (!noteresults.children.length) {
+        noteresults.style.display = "none";
+    }
+}
+
     }
     Deletetextbtn.addEventListener("click",deletenotefunc);
 
